@@ -20,7 +20,7 @@ import java.awt.Color;
 public class Multas extends JFrame {
 
 	private JPanel contentPane;
-	private Admin a;
+	private Admin A;
 	private Inspector i;
 
 	/**
