@@ -18,7 +18,7 @@ import java.awt.Color;
 
 public class ConTarjetaParq extends JFrame {
 
-	private JPanel contentPane;
+	private JPanel contentPan;
 	private Parquimetro parq;
 
 	/**
@@ -62,7 +62,7 @@ public class ConTarjetaParq extends JFrame {
 					r.next();
 					String mensaje=null;
 					System.out.println(r.getMetaData().getColumnCount());
-					if (r.getString(1).equals("SQLEXCEPTION!, transacción abortada")){
+					if (r.getString(1).equals("SQLEXCEPTION!, transacciï¿½n abortada")){
 						throw new SQLException();
 					}
 					if (r.getString(1).equals("Error")){
@@ -71,15 +71,15 @@ public class ConTarjetaParq extends JFrame {
 					else{
 						if (r.getString(1).equals("Apertura")){
 							if (r.getString(2).equals("Error"))
-								mensaje="Saldo insuficiente en la tarjeta, no se abrirá el estacionamiento";
+								mensaje="Saldo insuficiente en la tarjeta, no se abrirï¿½ el estacionamiento";
 							else
-								mensaje="Se realizó con éxito la apertura del estacionamiento para el automóvil: "+r.getString(4)+", tiempo restante: "+r.getString(3)+" minutos";
+								mensaje="Se realizï¿½ con ï¿½xito la apertura del estacionamiento para el automï¿½vil: "+r.getString(4)+", tiempo restante: "+r.getString(3)+" minutos";
 						}
 						else{
 							if (r.getString(2).equals("Error"))
-								mensaje="Se cerró el estacionamiento, pero llegó al tope de saldo mínimo: -999.99";
+								mensaje="Se cerrï¿½ el estacionamiento, pero llegï¿½ al tope de saldo mï¿½nimo: -999.99";
 							else
-								mensaje="Se realizó con éxito el cierre del estacionamiento para el automóvil: "+r.getString(4)+", saldo restante: $"+r.getString(3)+", transcurrieron: "+r.getString(5)+" minutos";
+								mensaje="Se realizï¿½ con ï¿½xito el cierre del estacionamiento para el automï¿½vil: "+r.getString(4)+", saldo restante: $"+r.getString(3)+", transcurrieron: "+r.getString(5)+" minutos";
 						}
 							
 					}
